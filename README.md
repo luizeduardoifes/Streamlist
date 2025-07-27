@@ -21,3 +21,6 @@ Para iniciar a aplicação, execute o seguinte comando no terminal:
 streamlit run app.py
 ```
 
+## Uso em dispositivos móveis
+
+O Streamlit pode ser acessado diretamente pelo navegador em dispositivos móveis, permitindo que você utilize e visualize o aplicativo em smartphones e tablets sem necessidade de instalação adicional. Basta acessar o endereço da aplicação pelo navegador do seu dispositivo.
