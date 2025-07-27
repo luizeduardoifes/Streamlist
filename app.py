@@ -1,3 +1,4 @@
+import time
 import requests
 import streamlit as st
 
@@ -13,21 +14,24 @@ def buscar_id(url,id):
 
 st.image("https://www3.ft.unicamp.br/sites/default/files/styles/large/public/si3.jpg?itok=iV7NWzMk", caption="SI3 - Sistema Integrado de Informações Institucionais da Unicamp")
 
-url = st.text_input("Digite o id da pessoa: ", key="dados")
+url = st.text_input("Digite url desejado: ", key="dados")
 id = st.text_input("Digite o id: ", key="id")
 botao = st.button("Pesquisar", key="botao")
 
 if botao:
-    buscar = buscar_id(url,id)
+    if url and id:
+        with st.spinner("Buscando..."):
+            time.sleep(4)
+        buscar_id(url, id)
+    else:
+        st.error("Por favor, preencha todos os campos.")
     
-else:
-    st.error("Por favor, digite um id válido.")
-
-# try:
-#     if botao:
-#         buscar_id(dados)
+    
+    
         
-# except requests.exceptions.RequestException as e:
-#     st.error(f"Erro ao buscar dados: {e}")
+
+        
+
+
         
     
